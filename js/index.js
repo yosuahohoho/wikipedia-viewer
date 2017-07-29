@@ -1,4 +1,5 @@
 $(document).ready(function() {
+<<<<<<< HEAD
 
   $("#get").on("click", function() {
 
@@ -6,6 +7,14 @@ $(document).ready(function() {
 
     var entry = input.value;
 
+=======
+  $("#get").on("click", function() {
+    
+    var input = document.getElementById('search');
+    
+    var entry = input.value;
+    
+>>>>>>> 55159879c82c9bc754cfc854314e5492eebda9bb
     $.ajax({
       type: 'GET',
       url: 'https://en.wikipedia.org/w/api.php',
@@ -25,6 +34,7 @@ $(document).ready(function() {
       datatype: 'jsonp',
       success: function(json) {
         $("#results").empty();
+<<<<<<< HEAD
 
         var data = json.query.search;
 
@@ -49,3 +59,23 @@ $(document).ready(function() {
   })
 
  })
+=======
+        
+        var data = json.query.search;
+        
+        var html1 = "<div class='col-md-4'><div class='panel panel-default'>";
+        var html2 = "<p><a href='#'>read more ...</a></p></div></div>";
+        
+        if(data.length > 1) {
+          for(var i=0; i < data.length; i++) {
+            $("#results").append(html1 + "<h4>" + data[i]['title'] + "</h4>" + data[i]['snippet'] + html2);
+          }
+        };
+      }
+      
+    })
+    
+  })
+  
+ })
+>>>>>>> 55159879c82c9bc754cfc854314e5492eebda9bb
