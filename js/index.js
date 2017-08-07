@@ -23,6 +23,8 @@ function showEntries(dataType){
 
       }; // end of loops
 
+      $("#results").append(addPager);
+
     }; // end of if statement
 }
 
@@ -55,6 +57,15 @@ function getWikipediaEntries() {
 
     }) // end of ajax calling function
 
+}
+
+function addPager() {
+    var htmlPager = "<div class='pager_section'><ul class='pager'> \
+                <li><a href='#'><i class='fa fa-angle-left' aria-hidden='true'></i></a></li> \
+                <li><a href='#'><i class='fa fa-angle-right' aria-hidden='true'></i></a></li> \
+                </ul></div>";
+
+    return htmlPager;
 }
 
 $(document).ready(function() {
