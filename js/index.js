@@ -1,9 +1,9 @@
-$(document).ready(function() {
+// index.js
 
-  $("#get").on("click", function() {
+// function for get the wikipedia entries
+function getWikipediaEntries() {
 
     var input = document.getElementById('search');
-
     var entry = input.value;
 
     $.ajax({
@@ -51,8 +51,20 @@ $(document).ready(function() {
 
      } // end of ajax success function
 
-    }) // end of ajax calling functin
+  }) // end of ajax calling function
 
-  }) // end of get button function
+}
+
+$(document).ready(function() {
+
+  // if users click or press search button
+  $("#get").on("click", getWikipediaEntries);
+
+  // if users press enter
+  $("#search").on("keypress", function(e) {
+      if (e.which == 13) {
+          getWikipediaEntries();
+      }
+  })
 
 })
