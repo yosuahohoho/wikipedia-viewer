@@ -1,11 +1,6 @@
-#searchBox {
-  margin-top: 50px;
-  margin-bottom: 90px;
-}
-
-#or {
-    display: inline;
-    margin: 0 10px;
+.box {
+  margin-top: 20px;
+  margin-bottom: 70px;
 }
 
 button {

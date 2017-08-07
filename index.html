@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- bootstrap3 -->
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- custom stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -19,17 +22,16 @@
 
     <div class="row">
       <!-- Search Box Section -->
-      <div class="col-md-12">
-        <div id="searchBox" class="text-center">
-          <h1>Wikipedia Viewer</h1>
+      <h1 class="text-center">Wikipedia Viewer</h1>
+      <div class="box col-md-12">
+        <div class="text-center">
           <input id="search" type="text" name="search" placeholder="search...">
-          <button id="get" type="button">Search</button>
-          <h4 id="or"> Or </h4>
-          <a id="random" href="https://en.wikipedia.org/wiki/Special:Random" role="button" target="_blank">
-              <button type"button">Random</button>
+          <button id="get" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <a class="btn btn-primary" title="random knowledge" href="https://en.wikipedia.org/wiki/Special:Random" role="button" target="_blank">
+              <i class="fa fa-random" aria-hidden="true"></i>
           </a>
         </div>
-     </div> <!-- </Search Box Section> -->
+     </div>
 
      <!-- Results Section -->
      <div class="col-md-12">
@@ -37,6 +39,15 @@
 
        </div>
      </div> <!-- </Results Section> -->
+
+     <!-- pager
+     <div class="pager_section">
+         <ul class="pager">
+             <li><a href="#">Previous</a></li>
+             <li><a href="#">Next</a></li>
+         </ul>
+     </div> -->
+
    </div> <!-- </.row> -->
 
  </div>
