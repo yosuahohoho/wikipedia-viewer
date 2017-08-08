@@ -18,31 +18,34 @@
 
 <body>
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <div class="row">
-      <!-- Search Box Section -->
-      <h1 class="text-center">Wikipedia Viewer</h1>
-      <div class="box col-md-12">
-        <div class="text-center">
-          <input id="search" type="text" name="search" placeholder="search...">
-          <button id="get" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-          <a class="btn btn-primary" title="random knowledge" href="https://en.wikipedia.org/wiki/Special:Random" role="button" target="_blank">
-              <i class="fa fa-random" aria-hidden="true"></i>
-          </a>
-        </div>
+      <div class="row">
+        <!-- Search Box Section -->
+        <h1 class="text-center">Wikipedia Viewer</h1>
+        <div class="box col-md-12">
+          <div class="text-center">
+            <input id="searchBox" type="text" name="search" placeholder="search...">
+            <button id="buttonGet" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            <a class="btn btn-primary" title="random knowledge" href="https://en.wikipedia.org/wiki/Special:Random" role="button" target="_blank">
+                <i class="fa fa-random" aria-hidden="true"></i>
+            </a>
+          </div>
+       </div>
+
+       <!-- Results Section -->
+       <div class="col-md-12">
+         <div id="results" class="row match-cols">
+
+         </div>
+       </div> <!-- </Results Section> -->
+
+     </div> <!-- </.row> -->
+
+     <div class="pagerSection">
      </div>
 
-     <!-- Results Section -->
-     <div class="col-md-12">
-       <div id="results" class="row match-cols">
-
-       </div>
-     </div> <!-- </Results Section> -->
-
-   </div> <!-- </.row> -->
-
- </div>
+   </div>
 
 <!-- third parties javascript library -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>

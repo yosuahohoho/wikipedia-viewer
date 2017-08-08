@@ -1,62 +1,64 @@
 // index.js
 
-function showEntries(dataType){
-    // clear the #results panel elements
-    $("#results").empty();
+function get(dataParameter) {
 
-    var data = dataType.query.search;
+    var entry = document.getElementById("searchBox");
 
-    if(data.length > 1) {
-      // loops each results data and show it in the #results panel
-       for(var i=0; i < data.length; i++) {
-
-         var openTag = "<div class='col-md-4'><div class='panel panel-default'>";
-         var title = data[i]['title'];
-         var titleLink = "<a href='https://en.wikipedia.org/wiki/" + title + "'" + "target='_blank'>" + title + "</a>";
-         var snippet = data[i]['snippet'] + ' ...';
-         var closeTag = "</div></div>";
-
-         $("#results").append(openTag + "<h4>" + titleLink + "</h4>" + "<p>" + snippet + "</p>" + closeTag);
-
-         // match the panel height columns using matchHeight.js
-         $(".panel").matchHeight();
-
-      }; // end of loops
-
-      $("#results").append(addPager);
-
-    }; // end of if statement
-}
-
-
-function getWikipediaEntries() {
-
-    var input = document.getElementById('search');
-    var entry = input.value;
+    if (entry.value.length > 0) {
+      dataParameter["srsearch"] = entry.value;
+    }
+    else {
+      dataParameter["srsearch"] = "freeCodeCamp";
+    }
 
     $.ajax({
       type: 'GET',
       url: 'https://en.wikipedia.org/w/api.php',
-      data: {
-        action: 'query',
-        format: 'json',
-        prop:'info',
-        origin: '*',
-        list: 'search',
-        titles: 'Main Page',
-        continue: '',
-        srsearch: entry,
-        srlimit: '6',
-        srwhat: 'text',
-        srprop: 'snippet',
-      },
+      data: dataParameter,
       datatype: 'json',
       success: function(json) {
-          showEntries(json);
+          extract(json);
       }
 
-    }) // end of ajax calling function
+    });
 
+}
+
+function extract(data){
+    // clear the #results panel elements
+    $("#results, .pagerSection").empty();
+
+    var results = data.query.search;
+
+    displayToHtml(results);
+
+}
+
+function displayToHtml(searchResults) {
+
+  if(searchResults.length > 1) {
+      // loops each results data and show it in the #results panel
+       for(var i=0; i < searchResults.length; i++) {
+
+         var openTag = "<div class='col-md-4'><div class='panel panel-default'>";
+         var title = searchResults[i]['title'];
+         var titleLink = "<a href='https://en.wikipedia.org/wiki/" + title + "'" + "target='_blank'>" + title + "</a>";
+         var snippet = searchResults[i]['snippet'] + ' ...';
+         var closeTag = "</div></div>";
+
+         $("#results").append(openTag +
+                              "<h4>" + titleLink + "</h4>" +
+                              "<p>" + snippet + "</p>" +
+                              closeTag);
+
+         // match the panel height columns using matchHeight.js
+         $(".panel").matchHeight();
+
+      };
+
+      $(".pagerSection").append(addPager);
+
+    };
 }
 
 function addPager() {
@@ -70,14 +72,29 @@ function addPager() {
 
 $(document).ready(function() {
 
+  var searchParameter = {
+        action: 'query',
+        format: 'json',
+        prop:'info',
+        origin: '*',
+        list: 'search',
+        continue: '',
+        srsearch:'',
+        srlimit: '6',
+        srwhat: 'text',
+        srprop: 'snippet',
+}
+
+  get(searchParameter);
+
   // if users click or press search button
-  $("#get").on("click", getWikipediaEntries);
+  $("#buttonGet").on("click", get(searchParameter));
 
   // if users press enter
-  $("#search").on("keypress", function(e) {
+  $("#searchBox").on("keypress", function(e) {
       if (e.which == 13) {
-          getWikipediaEntries();
+          get(searchParameter);
       }
-  })
+    });
 
 })
