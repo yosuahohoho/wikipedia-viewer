@@ -1,27 +1,40 @@
-.box {
-  margin-top: 20px;
-  margin-bottom: 70px;
+body {
+  background-color: #cfd8dc;
 }
 
-button {
-    color: #000;
+.box {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #90A4AE;
+  padding-bottom: 30px;
 }
 
 h1 {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+.modal-dialog {
+  background-color: #fff;
+}
+
+.modal-header {
+  background-color:#01579b ;
 }
 
 .panel {
   margin: 10px;
   padding: 15px;
+  padding-top: 5px;;
   text-align: left;
+  background-color: #B0BEC5;
 }
 
-h4 {
+h4 > a{
   font-weight: 600;
+  color: #0D47A1;
   margin-top: 0;
 }
 
 .pagerSection {
-    margin-top: 20px;
+    margin-top: 35px;
 }
