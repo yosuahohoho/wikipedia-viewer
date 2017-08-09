@@ -58,7 +58,10 @@ function displayToHtml(searchResults) {
 
       $(".pagerSection").append(addPager);
 
-    };
+  } else {
+    var entriesNotFound = "<h1 class='text-center'>Entry Not Found..</h1>";
+    $("#results").append(entriesNotFound);  
+  }
 }
 
 function addPager() {
