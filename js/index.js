@@ -74,6 +74,13 @@ function extract(data){
 
 function displayToHtml(searchResults) {
 
+    /*if (searchResults.length === 0) {
+
+        $("#results").html("<h1 class='text-center'>Entry Not Found..</h1>");
+        $(".pagerSection").hide();
+
+    }*/
+
 
     for (var prop in searchResults) {
        //console.log(results[prop]['title']);
@@ -95,13 +102,6 @@ function displayToHtml(searchResults) {
       };
       // display the pager button
       $(".pagerSection").show();
-
-   /*else {
-
-        $("#results").html("<h1 class='text-center'>Entry Not Found..</h1>");
-        $(".pagerSection").hide();
-
-  }*/
 
 }
 
