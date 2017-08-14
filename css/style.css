@@ -1,24 +1,18 @@
-body {
-  background-color: #cfd8dc;
-}
 
-.box {
-  margin-top: 10px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid #90A4AE;
-  padding-bottom: 30px;
+.container-fluid {
+  background-color: #cfd8dc;
+  min-height: 680px;
 }
 
 h1 {
   margin-bottom: 10px;
 }
 
-.modal-dialog {
-  background-color: #fff;
-}
-
-.modal-header {
-  background-color:#01579b ;
+.searchBox {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #90A4AE;
+  padding-bottom: 30px;
 }
 
 .panel {
@@ -27,6 +21,7 @@ h1 {
   padding-top: 5px;;
   text-align: left;
   background-color: #B0BEC5;
+  border: none;
 }
 
 h4 > a{
@@ -36,5 +31,5 @@ h4 > a{
 }
 
 .pagerSection {
-    margin-top: 35px;
+    margin-top: 25px;
 }

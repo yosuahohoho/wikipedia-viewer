@@ -21,42 +21,22 @@
     <div class="container-fluid">
 
       <div class="row">
-        <!-- Search Box Section -->
-        <h1 class="text-center">Wikipedia Viewer</h1>
+        <!-- header -->
+        <div class="col-md-12">
+         <h1 class="col-md-4 col-md-offset-4 text-center">Wikipedia Viewer</h1>
+        </div>
 
-        <div class="box col-md-12">
+        <!-- search box -->
+        <div class="searchBox col-md-12">
           <form class="col-md-4 col-md-offset-4">
             <div class="input-group">
               <span class="input-group-addon">
                 <i class="glyphicon glyphicon-search"></i>
               </span>
-              <input id="searchBox" class="form-control" type="search" name="search" placeholder="search...">
-           </div>
+              <input id="search" class="form-control" type="search" name="search" placeholder="search...">
+          </div>
          </form>
-
-         <div class="col-md-4">
-
-         <!-- modal -->
-         <div id="myModal" class="modal fade" role="dialog">
-           <div class="modal-dialog modal-sm">
-
-             <!-- modal content -->
-             <div>
-               <div class="modal-header">
-                 <button type="button" class="close" data-dismiss="modal" title="close">&times;</button>
-               </div>
-               <div class="modal-body">
-                 <p>Do you want a random article?</p>
-                  <a class="btn btn-primary" title="random article" href="https://en.wikipedia.org/wiki/Special:Random" role="button" target="_blank">
-                Yes, I want
-                 </a>
-               </div>
-             </div>
-
-           </div>
-         </div>
-        </div>
-       </div>
+       </div><!-- search box -->
 
        <!-- Results Section -->
        <div class="col-md-12">
@@ -65,12 +45,20 @@
          </div>
        </div> <!-- </Results Section> -->
 
-     </div> <!-- </.row> -->
+   </div> <!-- </.row> -->
 
-     <div class="pagerSection">
+
+
+      <div class="pagerSection text-center" hidden>
+        <div>
+          <ul class='pager'>
+            <li><a id="previous" role='button'><i class='fa fa-angle-left' aria-hidden='true'></i></a></li>
+            <li><a id='next' role='button'><i class='fa fa-angle-right' aria-hidden='true'></i></a></li>
+          </ul>
+        </div>
      </div>
 
-   </div>
+ </div>
 
 <!-- third parties javascript library -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
